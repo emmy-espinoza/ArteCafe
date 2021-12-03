@@ -1,0 +1,71 @@
+<%- include('partials/head.ejs')%>
+
+  <body class="cc">
+    <%- include('partials/header.ejs') %>
+    <!----contact formulario-->
+    <section class="contact">
+      <h1 class="logo_contact">Mandanos tu mensaje</h1>
+
+      <div class="contact-wrapper animated bounceInUp">
+        <div class="contact-form">
+          <h3>Formulario</h3>
+          <form action="https://formsubmit.co/arte.cafe.c8@gmail.com" id="form" method="POST">
+            <p>
+              <label for="name">Nombre <span>*</span></label>
+              <input type="text" name="name" value="<%= locals.old && old.name %>">
+                <% if (locals.errors && errors.name) { %>
+                  <small class="text_error">
+                    <%= errors.name.msg %>
+                  </small>
+                  <% } %>
+            </p>
+            <p>
+              <label for="email">Correo electrónico <span>*</span></label>
+              <input type="email" name="email">
+              <% if (locals.errors && errors.email) { %>
+                <small class="text-danger">
+                  <%= errors.email.msg %>
+                </small>
+                <% } %>
+            </p>
+            <p>
+              <label>Asunto</label>
+              <input type="text" name="asunto"/>
+            </p>
+            <p class="block">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message"></textarea>
+            </p>
+            <p class="block">
+              <button type="submit" class="btn primary full">
+                enviar mensaje
+              </button>
+            </p>
+          </form>
+
+          <a href="mailto:arte.cafe.c8@gmail.com" id="artecafe"></a>
+        </div>
+
+        <div class="contact-info">
+          <h4>Mas info</h4>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Calle falsa 123</li>
+            <li><i class="fas fa-phone"></i>1161031216</li>
+            <li><i class="fas fa-envelope-open-text"></i>arte.cafe.c8@gmail.com</li>
+          </ul>
+          <p>
+            Mandanos tus consultas o sugerencias y nos contactaremos con vos lo
+            antes posible.
+          </p>
+          <p>ARTE CAFE</p>
+        </div>
+      </div>
+    </section>
+
+    <%- include('partials/footer.ejs') %>
+      <!--funcion para que abra el correo/ buscar una que lo mande automático-->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <!-- <script src="/js/contact.js"></script> -->
+  </body>
+
+</html>

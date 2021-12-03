@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head.ejs') %>
+
+
+<body>
+   <%- include('partials/header.ejs') %> 
+ <!-- imagen move  -->
+
+
+    <main class="form-2">
+
+        <section class="part-1">
+
+            <article class="imagen">
+                <img src="/img/imgProductos/chemex.webp" alt="Chemex" title="Chemex">
+            </article>
+
+            <article class="producto">
+                <h3>Cafetera Chemex</h3>
+                <p>$10000</p>
+            </article>
+
+        </section>
+
+
+        <section >
+            <form class="form-pagar" action="">
+                <label for="nombre">Nombre del titular </label>
+                <input type="text" name="nombre"/>
+                <label for="numero">Numero de tarjeta </label>
+                <input type="number" name="numero"/>
+                <label for="mes">Fecha de expiracion </label>
+                <input type="date" name="mes"/>
+                <label for="contraseña">Codigo de seguridad </label>
+                <input type="password" name="contraseña"/>
+                <label for=""><a href="#" class="btn">Pagar</a></label>
+            </form>
+
+        </section>
+        
+    </main>
+
+
+
+
+    <%- include('partials/footer.ejs') %>
+</body>
+
+</html>

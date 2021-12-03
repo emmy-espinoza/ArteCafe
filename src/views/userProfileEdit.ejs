@@ -1,0 +1,116 @@
+<%- include('partials/head')%>
+
+    <body>
+        <%- include('partials/header')%>
+
+            <main class="usersForm-container">
+
+
+                <h3 class="userTitle"></h3>
+
+                <form id="form" action="/user/profile/userEdit/<%= user.id %>?_method=PUT" method="POST"
+                    enctype="multipart/form-data" class="form-ad">
+
+                    <!-- Campo de imagen de perfil -->
+                    <div class="img-container">
+                        <div id="img-preview" class="profile_user_img">
+                            <img class="imagenPerfil" src="/img/users_avatars/<%= user.avatar %>" class="input-file">
+                        </div>
+                    </div>
+                    <div class="box-form">
+                        <label class="img-perfil" for="imgUser"></label>
+                        <input class="img-input" type="file" name="avatar" id="formFile"
+                            value="<%= locals.old && old.file %>" />
+                    </div>
+                    <div>
+                        <span id="fileErrors" class="text_error">
+                            <% if(locals.errors && errors.file) { %>
+                                <%= errors.file.msg %>
+                                    <% } %>
+                        </span>
+                    </div>
+
+                    <div class="form-add-input">
+
+                        <!-- Campo Nombre -->
+                        <div class="form-ad-input">
+                            <input id="name" type="text" name="name" placeholder="Nombre"
+                                value="<%= locals.old ? old.name : user.name %>" />
+                            <span id="nameErrors" class="text_error">
+                                <% if(locals.errors && errors.name) { %>
+                                    <%= errors.name.msg %>
+                                        <% } %>
+                            </span>
+                        </div>
+
+
+                        <!-- Campo Apellido -->
+                        <div class="form-ad-input">
+                            <input id="lastname" type="text" name="last_name" placeholder="Apellido"
+                                value="<%= locals.old ? old.last_name : user.last_name %>" />
+                            <span id="lastnameErrors" class="text_error">
+                                <% if(locals.errors && errors.last_name) { %>
+                                    <%= errors.last_name.msg %>
+                                        <% } %>
+                            </span>
+                        </div>
+
+                        <!-- Campo Telefono -->
+                        <div class="form-ad-input">
+                            <input id="phone" type="number" name="phone" placeholder="Ingresá tu teléfono"
+                                value="<%= user.phone %>" />
+                            <span id="phoneErrors" class="text_error">
+                                <% if(locals.errors && errors.phone) { %>
+                                    <%= errors.phone.msg %>
+                                        <% } %>
+                            </span>
+                        </div>
+
+                        <!-- Campo Email-->
+                        <div class="form-ad-input">
+                            <li style="list-style: none;"> 
+                                <div class="userProfileSubtitle"><span class="attrPerfil">Email</span></div> 
+                                <div class="attrMiPerfil"><%= user.email %></div> 
+                            </li>
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Campo Errores -->
+                    <span id="submitErrors" class="text_error" >
+                        <% if (locals.errors && errors.submit) { %>
+                            <%= errors.submit.msg %>
+                                <% } %>
+                    </span>
+
+                    <div class="button-container" style="text-align: center;">
+                        <button type="submit" class=" btn-ad-primary">
+                            GUARDAR
+                        </button>
+                    </div>
+
+                </form>
+
+                <div class="button_container" style="text-align: center;">
+                    <a href="/user/cambiarContrasenia">
+                        <button id="elminarPerfil-button" type="button" class="btn-ad-primary">
+                            CAMBIAR CONTRASEÑA
+                        </button>
+                    </a>
+                </div>
+                <div class="button-container" style="text-align: center; max-width: 100%">
+                    <form id="deleteForm" style="text-align: center; max-width: 100%" action="/user/userDelete/<%= user.id %>?_method=DELETE" method="POST">
+                        <button style="text-align: center; max-width: 100%"id="elminarPerfil-button" type="submit" class="btn-ad-primary">
+                            ELIMINAR PERFIL
+                        </button>
+                    </form>
+                </div>
+
+            </main>
+            <%- include('partials/footer')%>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+                <script src="/js/profile_edit.js"></script>
+    </body>
+
+    </html>

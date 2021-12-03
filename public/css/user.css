@@ -1,0 +1,567 @@
+.user_body {
+  background: url(/img/imgVarios/fondocafe.jpg);
+  display: flex;
+  justify-content: space-around;
+}
+
+.container_user {
+  width: 80%;
+  display: flex;
+  margin: 10vw;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.ctn_form {
+  width: 80%;
+  padding: 20px;
+  background: #f7f7f7e5;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 300;
+  color: #7a7a7a;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+  font-weight: 300;
+  color: #7a7a7a;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="text"] {
+  width: 100%;
+  height: 65px;
+  background: rgba(0, 0, 0, 0);
+  border: 0px;
+  outline: 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  font-size: 16px;
+}
+
+.btn_login {
+  width: 50%;
+  color: white;
+  padding: 5px;
+  border: 0px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #419e02, #11580b);
+  font-weight: 300;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.text_end {
+  margin: 10px;
+  display: block;
+  text-align: center;
+  color: #7a7a7a;
+  font-weight: 300;
+}
+
+.text_end a {
+  color: #029ee1;
+  font-weight: 500;
+}
+
+/* LADO DERECHO */
+
+.ctn_text {
+  width: 100%;
+  background-image: url(/img/imgVarios/welcome.jpeg);
+  background-position: center;
+  background-size: cover;
+  padding: 40px;
+  position: relative;
+}
+
+.capa {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #a38647, #bf8022);
+  opacity: 0.8;
+}
+
+.title_bvn {
+  position: relative;
+  top: 80px;
+  color: white;
+  font-weight: 300;
+  font-size: 40px;
+  text-align: center;
+}
+
+.text_bvn {
+  position: relative;
+  top: 110px;
+  color: white;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+/* TEXTO DE ERROR */
+
+.text_error {
+  color: red;
+  display: block;
+  margin-top: 10px;
+}
+
+.check {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.check label {
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+}
+
+.close_x {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: relative;
+}
+
+.close_x:hover,
+.close_x:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close_x1 {
+  color: #aaa;
+  justify-content: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: relative;
+  display: none;
+  padding-top: 1rem;
+}
+
+.close_x:hover,
+.close_x:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 800px) {
+  .close_x1 {
+    display: flex;
+  }
+  .ctn_text {
+    display: none;
+  }
+
+  .ctn_form {
+    margin: auto;
+    width: 95%;
+    background: rgb(255 255 255 / 85%);
+    margin-top: -2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    margin-top: 10px;
+  }
+
+  input[type="submit"] {
+    margin-top: 0;
+  }
+
+  .text_end {
+    display: block;
+    margin-top: 25px;
+  }
+}
+
+.ctn_form {
+  width: 80%;
+  padding: 20px;
+}
+
+/*****************user edit***********************/
+.title-perfil {
+  text-align: center;
+  font-family: fangsong;
+  padding: 20px;
+}
+
+.btn-ad-primary {
+  width: 100%;
+  height: 50 px;
+  color: white;
+  border: 0 px;
+  background: linear-gradient(90deg, #419e02, #11580b);
+  font-weight: 300;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  font-size: 18px;
+  max-width: 54%;
+}
+
+/*********************USER PROFILE**********************************/
+
+.listaPerfil {
+  list-style: none;
+  text-align: initial;
+}
+
+.attrPerfil {
+  color: #000;
+  font-family: initial;
+  font-weight: bold;
+  margin-left: 2px;
+  font-size: 25px;
+}
+
+.attr {
+  color: #000;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 15px;
+  margin: 10px;
+  font-family: fangsong;
+  font-size: 20px;
+}
+
+.miPerfil {
+  text-align: center;
+  font-family: fangsong;
+  padding: 20px;
+}
+
+.editarPerfil {
+  text-align: center;
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #27ae60;
+  box-shadow: 10px 4px 26px -3px rgb(0 0 0 / 75%);
+  -webkit-box-shadow: 10px 4px 26px -3px rgb(0 0 0 / 75%);
+  color: #fff;
+  font-weight: bold;
+}
+
+.editButtonDiv {
+  text-align: center;
+}
+
+.buttom_volverHome {
+  font-size: 15px;
+  padding: 4px;
+  border-radius: 10px;
+  background-color: #27ae60;
+  box-shadow: 10px 4px 26px -3px rgb(0 0 0 / 75%);
+  -webkit-box-shadow: 10px 4px 26px -3px rgb(0 0 0 / 75%);
+  font-weight: bold;
+  color: #fff;
+}
+
+.btn_alHome {
+  text-align: end;
+}
+
+.profile_user_img {
+  text-align: center;
+}
+
+.imagenPerfil {
+  width: 129px;
+  height: 129px;
+  border-radius: 67px;
+}
+
+/***************PROFILE EDIT***************************/
+.profileEdit h2 {
+  font-family: var(--fontFamily-Titulo);
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-weight: 400;
+  background-color: var(--color-negro4);
+  padding: 10px;
+}
+
+.box-forms {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.box-buttons {
+  padding-bottom: 20px;
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.box-buttons a {
+  color: black;
+}
+
+.box-buttons button {
+  padding: 8px;
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid #000;
+  border-radius: 4px;
+  font-family: var(--fontFamily-Textos);
+  text-transform: uppercase;
+}
+
+#elminarPerfil-button {
+  margin-top: 1rem;
+  display: inline-block;
+  /* font-size: 1rem; */
+  color: #fff;
+  background: linear-gradient(90deg, #038166, #22e2a9);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+}
+
+#elminarPerfil-button:hover {
+  background: linear-gradient(90deg, #a34747, #f30000);
+}
+/************REGISTRO*********************/
+.registerArt {
+  margin-left: 20%;
+  width: 50%;
+}
+.input-file {
+  color: brown;
+}
+
+.user_f {
+  font-family: "Roboto";
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: url(/img/imgVarios/cafe_taza.jpeg) no-repeat;
+  background-size: 800px;
+  background-position: top;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 100vh;
+}
+.user_form .registro {
+  text-align: center;
+  font-weight: 700;
+  color: rgb(243, 246, 247);
+  padding: 10px;
+}
+
+.user_form {
+  background: rgba(255, 255, 255, 0.473);
+  padding: 20px 0;
+  box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
+
+.user_form .grupo {
+  position: relative;
+  margin: 45px;
+}
+
+.user input {
+  background: none;
+  color: #c6c6c6;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--colorTextos);
+}
+
+.img-perfil {
+  height: 5rem;
+}
+
+/* #img-preview {
+  margin-top: 3%;
+  width: 14%;
+  height: 100px;
+  border: thin solid gray;
+  border-radius: 10px;
+  text-align: center;
+} */
+
+/* .img-preview img {
+  max-width: 100%;
+  max-height: 100%;
+} */
+
+.user input:focus {
+  outline: none;
+  color: #5e5d5d;
+}
+
+.user label {
+  color: var(--colorTextos);
+  font-size: 16px;
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  transition: 0.5s ease all;
+  pointer-events: none;
+}
+
+.user input:focus ~ label,
+.user input:valid ~ label {
+  top: -14px;
+  font-size: 15px;
+  color: #013b3b;
+  font-weight: bold;
+}
+
+.barra {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.barra::before {
+  content: "";
+  height: 2px;
+  width: 0%;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(to right, #6ab39d, #04cc68);
+  transition: 0.3s ease width;
+  left: 0;
+}
+
+.user input:focus ~ .barra::before {
+  width: 100%;
+}
+
+.warnings {
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  color: #ca0505;
+  padding-top: 20px;
+}
+
+.btn_user {
+  background: linear-gradient(90deg, #038166, #22e2a9);
+  font-family: "roboto";
+  border: none;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  color: #fff;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn_user:hover {
+  background: var(--green);
+  letter-spacing: 0.1rem;
+}
+
+.grupo2 .text-footer {
+  display: flex;
+  margin-top: 50px;
+  text-align: center;
+  color: #7a7a7a;
+  font-weight: 400;
+  justify-content: center;
+}
+
+.grupo2 .text-footer a {
+  color: #029ee1;
+  font-weight: 500;
+}
+
+.form_register {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.form_submit {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.form_submit input {
+  border-radius: 15px;
+  width: 30%;
+}
+
+@media screen and (max-width: 400px) {
+  .user_f {
+    padding-top: 13rem;
+  }
+}
+
+
+.img-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+
+
+
+.btn-ad-primary{
+  margin-top: 1rem;
+  display: inline-block;
+  /* font-size: 1rem; */
+  color: #fff;
+  background: linear-gradient(90deg,#038166, #22e2a9 );
+  border-radius: 0.5rem;
+  cursor: pointer;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  max-width: 50%;
+}
+
+.form-ad-input{
+  width: 50%;
+  height: 100px;
+  background: rgba(0, 0, 0, 0);
+  border: 0px;
+  outline: 0px;
+  font-size: 16px;
+}
+
+.form-add-input{
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}

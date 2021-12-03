@@ -1,0 +1,24 @@
+<section class="special-offers" id="slider_offers">
+    <h3 class="section__title"><%= titleSlider %></h3>
+    <!-- Product Slider -->
+
+    <div class="gallery productSlider js-flickity"
+    data-flickity-options='{ "wrapAround": true }' >
+    <% productsSlider.forEach(product => {%>
+        <div class="carousel-cell productSlide">
+            <a href="/products/productsDetail/<%- product.id%>">
+                <% if( product.discount > 0 ) { %>
+                   <div class="productDiscount"><%- product.discount %>% OFF</div>
+                  <% } %>
+                
+                <img style="width: 200px; height: 200px;" src="/img/imgProductos/<%- product.images[0]?.image %>" alt="">
+                <p class="productName"><%- product.name %></p>
+                <h4 class="productPrice">$<%=toThousand(product.price)%></h4>
+            </a>
+        </div>
+    <% }) %>
+    
+    </div>
+</section>
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>

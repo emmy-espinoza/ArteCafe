@@ -1,0 +1,22 @@
+h4 {
+    text-align: center;
+    background-color: yellowgreen;
+    
+
+}
+
+.tablita .table {
+    background-color: #ace0af;
+    margin: 5%;
+    padding: 5%;
+    width: 90%;
+}
+
+.columnas {
+    border: white;
+}
+
+.edit, .delete {
+    color: brown;
+}
+

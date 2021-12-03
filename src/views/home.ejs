@@ -1,0 +1,212 @@
+<%- include('partials/head.ejs') %>
+
+    <body>
+        <%- include('partials/header.ejs') %>
+            <!-- imagen move  -->
+            <section class="home" id="home">
+
+                <div class="content">
+
+                    <span>Arte café</span>
+                    <h3>Sabores del mundo</h3>
+                    <p> Café de especialidad,
+                        cafeteras, accesorios
+                        y todo lo que necesitas
+                        para disfrutar del arte del café
+
+                        <a href="/products" class="btn">Ver productos</a>
+                </div>
+
+            </section>
+
+            <!-- slider coffee -->
+            <%- include('partials/slider.ejs') %>
+
+                <!-- CATEGORIES -->
+                <section class="portafolio">
+                    <div class="contenedor">
+                        <h1 class="titulo" style="font-size: 2rem;">Secciones</h1>
+                        <div class="galeria-port">
+                            <div class="imagen-port">
+                                <img src="/img/img_home/cafeMolido.jpg">
+                                <div class="hover-galeria">
+                                    <img src="/img/iconos/coffee-cup.png" alt="">
+                                    <p>Sabores del mundo</p>
+                                </div>
+                            </div>
+                            <div class="imagen-port">
+                                <img src="/img/imgProductos/foto_cafetera_promo.jpg.jpg">
+                                <div class="hover-galeria">
+                                    <a href="products/cafeteras"><img src="/img/iconos/coffee-cup.png"></a>
+                                    <p>Cafeteras</p>
+                                </div>
+                            </div>
+                            <div class="imagen-port">
+                                <img src="/img/img_home/merienda.jpg">
+                                <div class="hover-galeria">
+                                    <a href="/meriendas"><img src="/img/iconos/coffee-cup.png"></a>
+
+                                    <p>Meriendas</p>
+                                </div>
+                            </div>
+                            <div class="imagen-port">
+                                <img src="/img/img_home/accesorios.jpg">
+                                <div class="hover-galeria">
+                                    <a href="products/accesorios"><img src="/img/iconos/coffee-cup.png"></a>
+                                    <p>Accesorios</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- productos descuentos  -->
+                <h1 class="heading"> Productos con descuentos</span></h1>
+                <section class="products" id="products">
+
+                    <% productsDesc.forEach(product=> { %>
+                        <div class="box-container">
+                            <div class="box">
+                                <% if( product.discount > 0 ) { %>
+                                <span class="discount">-<%=`${product.discount}` %>%</span>
+                                <% } %>
+                                <div class="image">
+                                    <img class="img_pro" style="max-height: 210px;
+                                    min-width: 210px;" src="img/imgProductos/<%= product.images[0]?.image%> "
+                                        alt="<%= product.name%>">
+                                    <div class="icons">
+                                        <a href="/products/productsDetail/<%= product.id%>">Ver</a>
+                                        <a href="#" class="cart-btn">Agregar</a>
+                                        <a href="#" class="fas fa-share"></a>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <h3>
+                                        <%= product.name%>
+                                    </h3>
+                                    <span>
+                                        <%= product.discount !==0 ? `${product.discount}% OFF` : "" %>
+                                    </span>
+                                    
+                                    <div class="price">
+                                        <% if( product.discount > 0 ) { %>
+                                            <p class="<%= product.discount > 0 ? 'tachado' : '' %>">
+                                              $<%=toThousand(product.price)%>
+                                            </p>
+                                          <% } %>
+                                            <h2>
+                                                $<%= toThousand(product.price - product.price * product.discount /
+                                                    100)%>
+                                            </h2>
+                                            <% if( product.discount > 0 ) { %>
+                                                <span>
+                                                  <%=product.discount !==0 ? `${product.discount}% OFF` : "" %>
+                                                </span>
+                                              <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+                </section>
+
+                <!---banner de iconos-->
+                <section class="icons_bann">
+                    <div class="icon_bann">
+                        <img src="/img/iconos/delivery-truck.png" alt="">
+                        <div class="info">
+                            <h3>Envío a todo el pais</h3>
+                            <span>Bonificado a partir de $3500</span>
+                        </div>
+                    </div>
+
+                    <div class="icon_bann">
+                        <img src="img/iconos/gif.png" alt="">
+                        <div class="info">
+                            <h3>Gift card</h3>
+                            <span>Regala los mejores momentos</span>
+                        </div>
+                    </div>
+
+                    <div class="icon_bann">
+                        <img src="/img/iconos/escudo.png" alt="">
+                        <div class="info">
+                            <h3>Todos los medios de pago</h3>
+                            <span>Tu compra segura</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!--- sobre nosotros-->
+
+                <section class="about" id="about">
+
+                    <h1 class="heading"> Artesanos del Café </h1>
+
+                    <div class="row">
+
+                        <div class="image">
+                            <img src="/img/img_home/empleados_.jpeg" alt="">
+                        </div>
+
+                        <div class="content">
+                            <h3 class="title">Una empresa con un sabor especial!</h3>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse et commodi, ad, doloremque
+                                obcaecati maxime quam minima dolore mollitia saepe quos, debitis incidunt. Itaque
+                                possimus adipisci ipsam harum at autem.</p>
+                            <a href="/sobre_nosotros" class="btn">Leer mas</a>
+
+                        </div>
+
+                    </div>
+
+                </section>
+                <!--- video-------->
+                <section class="video" id="video">
+
+                    <h1 class="heading"> Granos seleccionados </h1>
+
+                    <div class="row">
+
+                        <div class="video_container">
+                            <video src="/img/video/Beans - 72745.mp4" loop autoplay muted></video>
+
+                            <h3>Molienda preferida</h3>
+                        </div>
+
+                        <div class="v_content">
+                            <h1 class="heading">Molemos en el momento </h1>
+                            <p>La gran ventaja de cuidar la molienda de nuestro café es que, si lo hacemos, obtendremos una bebida con sus notas características, por tanto, estaremos resaltando todos sus sabores.
+
+                                Y, sobre todo, reduciremos el riesgo de tener una taza de café muy amarga o ácida.
+                                Hay tres grandes tipos de molienda: fina, media y gruesa que se ajustan a las necesidades de cada cafetera. 
+                                
+                               </p>
+                            <a href="/molemos" class="btn">Leer mas</a>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                </section>
+
+                
+
+
+
+                
+                
+            </body>
+            <%- include('partials/footer.ejs') %>
+            <script src="/js/product-slider.js"></script>
+            <script src="/js/productDetail.js"></script>
+    <!-- links JS -->
+
+
+
+
+
+</html>

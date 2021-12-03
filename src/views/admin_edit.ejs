@@ -1,0 +1,128 @@
+<%- include('partials/head_admin.ejs')%>
+  <body>
+    <%- include('partials/header_admi.ejs')%>
+    <form class="crearp" id="form" action="/admin/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+      <!-- Campo Nombre -->
+      
+      <div class="form-ad">
+        <label for="inputname" class="form-label">Producto</label>
+        <input 
+          type="text" 
+          class= "form-ad"
+          id="name" 
+          name="name" 
+          value="<%= locals.old ? old.name : product.name %>" 
+        />
+        <span id="nameErrors" class="text_error">
+          <% if(locals.errors && errors.name) { %>
+            <%= errors.name.msg %>
+          <% } %>
+        </span>
+      </div>
+
+      <!-- Campo Descripcion -->
+
+      <div class="Descripcion1">
+        <label for="description" class="form-label">Descripcion</label> 
+        <input 
+          type="textarea" 
+          class="form-control" 
+          id="description" 
+          name="description" 
+          value="<%= locals.old ? old.description : product.description %>" 
+        />
+        <span id="descriptionErrors" class="text_error">
+          <% if(locals.errors && errors.description) { %>
+            <%= errors.description.msg %>
+          <% } %>
+        </span>
+      </div>
+
+      <!-- Campo Precio -->
+
+      <div class="Precio1">
+        <label for="inputprice" class="form-label">precio</label>
+        <input 
+          type="number" 
+          class="form-control" 
+          id="formPrice" 
+          name="price" 
+          value="<%= locals.old ? old.price : product.price %>" 
+        />
+        <span id="priceErrors" class="text_error">
+          <% if(locals.errors && errors.price) { %>
+            <%= errors.price.msg %>
+          <% } %>
+        </span>
+      </div>
+
+      <!-- Campo Descuento -->
+      
+      <div class="Descuento1">
+        <label for="inputdiscont" class="form-label">Descuento</label>
+        <input 
+          type="number" 
+          class="form-control" 
+          id="inputdiscont" 
+          name="discount" 
+          value="<%= locals.old ? old.discount : product.discount %>" 
+        />
+      </div>
+
+      <!-- Campo Categoria -->
+
+      <div class="Categoria1">
+        <select class="form-select" id="specificSizeSelect" name="category">
+          <option selected hidden value="">Categorias</option>
+          <% categories.forEach(category => { %>
+            <option
+              value="<%- category.id %>"
+              <%- locals.old && old.category == category.id ? "selected" : category.id == product.categories_id ? "selected" : "" %>
+            >
+              <%- category.name %>
+             </option>
+          <% }) %>
+        </select>
+        <span id="categoryErrors" class="text_error">
+          <% if(locals.errors && errors.category) { %>
+            <%= errors.category.msg %>
+          <% } %>
+        </span>
+      </div>
+
+      <!-- Campo Imagen -->
+      
+      <div class="box-2 mt-3">
+        <div class="img-container" id="img-preview"></div>
+        <div class="Imagen1">
+          <label for="inputimage" class="form-label">Imagen</label>
+          <input 
+            type="file" 
+            class="form-control" 
+            id="formFile" 
+            name="images" 
+            value="<%=product.image%>" 
+            multiple
+          />
+          <span id="fileErrors"></span>
+        </div>
+      </div>
+
+      <!-- Errores de formulario -->
+
+      <div class="Producto1">
+        <span id="submitErrors"></span>
+      </div>
+
+      <!-- Boton de "Editar" -->
+
+      <div>
+        <button type="submit" class="btn btn-primary">Editar</button>
+      </div>
+    
+    </form>
+    <%- include('partials/footer.ejs') %>
+    <script src="/js/productEdit.js"></script>
+  </body>
+</html>

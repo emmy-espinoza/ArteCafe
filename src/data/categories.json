@@ -1,0 +1,14 @@
+[
+    {
+        "id" : 1,
+        "name": "Cafeteras"
+    },
+    {
+        "id" : 2,
+        "name": "Accesorios"
+    },
+    {
+        "id" : 3,
+        "name": "Cafe"
+    }
+]

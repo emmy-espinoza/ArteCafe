@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('partials/head.ejs' , {title: 'Productos' }) %>
+
+  <body class="productos">
+    <!-- comienza header  --->
+    <%- include('partials/header.ejs') %>
+
+      
+      <!-- boton atrás  -->
+     
+      <h1 class="heading_p" style="font-size: 2.3rem; text-align: center">
+        Productos encontrados para:
+          <%= search %>
+        
+        <main>
+          <% if (result.length> 0) { %>
+
+            <section class="products" id="products">
+
+              <% result.forEach(product=> { %>
+                <div class="box-container">
+
+                  <div class="box">
+                    <% if(product.discount > 0) { %>
+                      <span class="discount">-<%= product.discount %>%</span>
+                    <% } %>
+                    <div class="image">
+                      <img class="img_pro" style="max-height: 210px;
+                          min-width: 210px;" src="img/imgProductos/<%= product.images[0]?.image%> "
+                        alt="<%= product.name%>">
+                      <div class="icons">
+                        <a href="/products/productsDetail/<%= product.id%>">Ver</a>
+                     <% if (session.user.rol === 1) { %>
+                      <a href="/admin/products/edit/<%-product.id %> " class="cart-btn">Editar</a>
+                     <% }else{ %>
+                        <a href="#" class="cart-btn">Agregar</a>
+                        <% } %> 
+                        <a href="#" class="fas fa-share"></a>
+                      </div>
+                    </div>
+                    <div class="content">
+                      <h3 style="color: rgb(39, 161, 2, 0.486);;">
+                        <%= product.name%>
+                      </h3>
+                      <% if(product.discount > 0) { %>
+                        <span>
+                          <%= product.discount !==0 ? `${product.discount}% OFF` : "" %>
+                        </span>
+                      <% } %>
+                      <div class="price">
+                        <% if( product.discount > 0 ) { %>
+                          <p class="<%= product.discount > 0 ? 'tachado' : '' %>">
+                            $<%=toThousand(product.price)%>
+                          </p>
+                        <% } %>
+                        <h2>
+                          $<%= toThousand(product.price - product.price * product.discount / 100)%>
+                        </h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% }) %>
+                  </div>
+            </section>
+            <% } else { %>
+              <div class="col-12">
+                <h2 class="products-title" style="color: tomato">
+                  No hay productos que coincidan con esa búsqueda
+                </h2>
+              </div>
+              <% } %>
+
+        </main>
+
+        <div class="btn_volver" style="text-align: center;">
+          <a href="/" class="btn">Volver</a>
+        </div>
+        <%- include('partials/banner.ejs') %>
+          <!----   Comieza footer     ----->
+          <%- include('partials/footer.ejs') %>
+
+            <script src="js/main.js"></script>
+
+
+
+  </body>
+
+</html>

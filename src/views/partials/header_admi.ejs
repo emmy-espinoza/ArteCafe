@@ -1,0 +1,50 @@
+<section id="header_hd">
+    <!-- comienza header  --->
+    <header>
+        <section class="marquee">
+            <MARQUEE DIRECTION=right class="envio"> ¡Bienvenido al administrador! <i class="fas fa-hand-sparkles"></i>
+            </MARQUEE>
+            <div class="social-icons">
+                <h5 style="color: rgb(3, 116, 100);font-family: sans-serif;justify-content: center;text-align: center;font-size: 0.88rem;">Recuerda cerrar sesión luego de realizar
+                    tus cambios</h5>
+            </div>
+        </section>
+        <section class="header_container">
+            <a href="/" class="logo"><i class="fas fa-mug-hot"></i>Arte Café</a>
+
+           <nav class="navbar">
+        
+              
+                <a href="/admin/products/create" >Cargar nuevo producto</a>
+                <a href="/admin/categories/createForm" >Cargar nueva categoria</a>
+                
+            </nav>
+
+            <div class="icons">
+                <i class="fas fa-search" id="search-icon"></i>
+                <% if (typeof session.user != "undefined") { %>
+                    <div class="img-user" >
+                        <img class="icons" src="/img/users_avatars/<%= session.user.avatar %>"></a>
+                    </div>
+                    <% } else {%>
+                        <a href="/user/login" class="fas fa-user"></a> 
+                      <% } %>
+                <i class="fas fa-bars" id="menu-bars"></i>
+            </div>
+        </section>
+
+        
+
+
+    </header>
+
+    <!-- menu buscar  -->
+    <form action="/search" method="GET" id="search-form">
+        <input type="search" name="keywords" placeholder="Buscar..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+</section>
+
+<script src="/js/header.js"></script>

@@ -1,0 +1,37 @@
+<%- include('partials/head_admin.ejs')%>
+<%- include('partials/header_admi.ejs')%>
+<body>
+  <main class="mainadmin">
+    <div class="crearprod">
+      <form class="crearProducto" id="form" action="/admin/categories/create" method="POST" enctype="application/x-www-form-urlencoded">
+        <p class="titleadmin">Crear Categoria</p>
+
+        <!-- Campo Nombre -->
+
+        <label for="name">Nombre de la Categoria</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name"
+        />
+        <span id="nameErrors" class="text_error">
+          <% if(locals.errors && errors.name) { %>
+            <%= errors.name.msg %>
+          <% } %>
+        </span>
+
+        <!-- Campo de errores -->
+
+        <span id="submitErrors"></span>
+        <div class="botonCrear">
+          <button type="submit" class="Crear">Crear</button>
+        </div>
+
+      </form>
+    </div> 
+  </main>
+
+  <%- include('partials/footer.ejs') %>
+
+</body>
+</html>

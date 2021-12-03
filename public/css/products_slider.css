@@ -1,0 +1,200 @@
+
+.productSlider {
+    font-family: var(--font_poppins);
+}
+
+.productSlide {
+    width: 250px;
+    margin: 10px auto;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    transition: all 1s ease;
+    z-index: 1;
+}
+
+.productSlide:hover {
+    transform: scale(1.03);
+   
+}
+
+.productSlide .productDiscount {
+    position:absolute;
+    top: 0;
+    right: 0px;
+    padding: 5px;
+    background-color: var(--dark-blue);
+    color: #038166;
+    border-radius: 0px 10px 0px 10px;
+    font-size: 15px;
+    background: rgba(51, 255, 112, 0.267);
+}
+
+.special-offers {
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.productSlide img {
+    width: 100%;
+    border-bottom: 1px solid var(--primary);
+    border-radius: 20px;
+}
+
+.productSlide .productName {
+    font-size: 16px;
+    margin: 10px auto;
+    color: rgb(2 66 35 / 83%);
+    text-align: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.productSlide .productPrice {
+    font-size: 1.5rem;
+    margin: 10px auto;
+    color: rgb(2 66 35 / 83%);
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.productSlide .productPrice:hover {
+color: rgb(156, 214, 69);
+font-size: 3rem;
+}
+.flickity-page-dots { display: none;}
+
+@media screen and (min-width: 768px) {
+    
+    .productSlide {
+        width: 33%;
+        height: fit-content;
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .productSlide {
+        width: 20%;
+        height: 300px;
+    }
+}
+.special-offers {
+    background: linear-gradient(4deg, rgb(2 66 34 / 83%), transparent);
+    padding: 22px;
+    border-radius: 21px;
+    margin-bottom: 30px;
+}
+
+.section__title {
+    font-family: var(--font_baloo);
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+    .special-offers {
+        margin-bottom: 70px;
+    }
+    
+    .section__title {
+        margin-bottom: 35px;
+        font-size: 2rem;
+    }
+    
+}
+/* Carousel container */
+.carousel-container {
+    position: relative;
+    margin: 20px auto 30px;
+}
+
+/* Esconde las imágenes por default */
+.slides {
+    display: none;
+}
+
+.slides img{
+    width: 100%;
+}
+
+.dots {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+/* Botones de anterior y siguiente */
+.carousel-container .prev, .carousel-container .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: var(--dark-blue);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Posición de el boton siguiente a la derecha */
+.carousel-container .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* En hover, agrega un fondo con transparencia */
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Puntos indicadores */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot-active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@media screen and (min-width: 1024px) {
+    .carousel-container {
+        margin: 20px auto 50px;
+    }
+}

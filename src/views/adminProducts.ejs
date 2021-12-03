@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head_admin.ejs') %> 
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+<link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+<body> 
+    <%- include('partials/header_admi.ejs') %>
+    <div class="tabla_productos">
+        <table>
+            <tr>
+                <th> ID </th>
+                <th> Nombre </th>
+                <th> Precio </th>
+                <th> Categoria </th>
+                <th> Editar  </th>
+                <th> Eliminar </th>
+            </tr>
+        <% products.forEach( product => { %>
+            <tr>
+                <td> <%= product.id %></td>               
+                <td> <%= product.name %> </td>
+                <td> <%= product.price %> </td>
+                <td> <%= product.categories_id %> </td>
+                <td><a href="/admin/products/edit/<%=product.id%>" ><i class="far fa-edit"></i></a></td>
+
+                <form class="formDelete" action="/admin/products/delete/<%=product.id%>?_method=DELETE" method="POST">
+                    <td><button type="submit"><i class="far fa-trash-alt"></i></td>
+                </form>
+            </tr>
+        <% }) %>    
+        </table>
+    </div>
+    <%- include('partials/footer.ejs') %>
+    <script src="/js/adminProducts.js"></script>
+</body>
+</html>

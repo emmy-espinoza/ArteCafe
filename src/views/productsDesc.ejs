@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('partials/head.ejs') %>
+
+  <body class="productos">
+    <%- include('partials/header.ejs') %>
+    <!-- comienza header  --->
+
+    <!-- product section starts  -->
+
+    <section class="produc_page" id="produc_page">
+      <h1 class="heading">Productos<span> imperdibles </span></h1>
+
+      <div class="box-container">
+        <% products.forEach(product=> { %>
+
+        <div class="box-container">
+          <div class="box">
+            <span class="discount">- <%= product.discount %>% </span>
+            <div class="icons">
+              <a
+                href="/products/productsDetail/<%- product.id%>"
+                class="fas fa-eye"
+              ></a>
+            </div>
+            <img src="/img/imgProductos/<%- product.images[0].image%>" alt="" />
+            <h3><%- product.name %></h3>
+            <div class="info_pro">
+              <p class="info_p"><%- product.description %></p>
+            </div>
+            <div class="price">
+              $<%= toThousand(product.price) %>
+              <span>
+                $<%- toThousand(product.price - product.price * product.discount
+                /100) %>
+              </span>
+            </div>
+            <div class="quantity">
+              <span>Unidad: </span>
+              <input type="number" min="1" max="1000" value="1" />
+              <span></span>
+            </div>
+            <a href="/products/productsDetail/<%- product.id%>" class="btn"
+              >Agregar al carrito</a
+            >
+          </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+    <div class="btn_volver">
+      <button class="btn_inicio"><a href="/">Volver</a></button>
+    </div>
+
+    <!----   Comieza footer     ----->
+    <%- include('partials/footer.ejs') %>
+  </body>
+</html>

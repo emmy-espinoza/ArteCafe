@@ -1,0 +1,39 @@
+
+.crearprod{
+  
+    display: flex;
+    justify-content: space-around;
+};
+
+.main.mainadmin{
+    width: 80%;
+    display: flex;
+    margin: 10vw;
+    overflow: hidden;
+    justify-content: center;
+    
+};
+
+.crearprod .crearProducto .titleadmin{
+    font-family: Georgia, 'Times New Roman', Times, serif
+
+};
+
+.botonCrear{
+   color: blue;
+}
+
+.titleadmin{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 300;
+    color: #7a7a7a;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+
+.textarea_input{
+  
+
+}

@@ -1,0 +1,91 @@
+<section id="header_hd">
+    <!-- comienza header  -->
+    <header>
+
+        <section class="marquee">
+            <marquee direction=right class="envio"> 
+                Envío bonificado a partir de $3500 <i class="fas fa-truck"></i>
+            </marquee>
+            <!-- redes (fila gris) -->
+            <div class="social-icons">
+                <a href="https://www.facebook.com/Arte-cafe-107687191735250"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/artecafec8"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/arte-cafe/"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:arte.cafe.c8@gmail.com"><i class="fas fa-envelope-open-text"></i></a>
+                <a href="https://www.instagram.com/arte.cafe.c8/"><i class="fab fa-instagram"></i></a>
+                <a href="tel:+541161031216"><i class="fas fa-mobile-alt"></i></i></a>
+            </div>
+        </section>
+
+        <!-- Logo ancla al inicio  -->
+        <section class="header_container">
+            <a href="/" class="logo"><i class="fas fa-mug-hot"></i>Arte Café</a>
+
+            <!-- Menu navbar  -->
+            <nav class="navbar">
+                <a href="/products">Productos</a>
+                <a href="/sobre_nosotros">Sobre nosostros</a>
+                <% if(session.user != undefined) { %>
+                    <a href="/cart">Compra online</a>
+                <% } %>
+            </nav>
+
+            <div class="icons">
+                <i class="fas fa-search" id="search-icon"></i>
+                <div class="user">
+                    <% if (typeof session.user != "undefined") { %>
+                        <div class="img-user" >
+                            <img class="icons" src="/img/users_avatars/<%= session.user.avatar %>"></a>
+                        </div>
+                        <div class="menu-user">
+                            <a href="/user/userProfile" style="background:white;">Mi perfil</a>
+                            <a href="/user/logout" style="background:white;">Cerrar sesión</a>
+                            <% if (session.user.rol === 1) { %>
+                                <a href="/admin/products" style="background:white;">Productos</a>
+                            <% } %>
+                            <% if (session.user.rol === 1) { %>
+                                <a href="/admin/categoriesList" style="background:white;">Categorias</a>
+                            <% } %>
+                        </div>
+                    <% } else {%>
+                      <a href="/user/login" class="fas fa-user"></a> 
+                    <% } %>
+                </div>
+                
+               <!--  <a id="myBtn" class="fas fa-shopping-cart"></a> -->
+                <i class="fas fa-bars" id="menu-bars"></i>
+            </div>
+        </section>
+    </header>
+
+    <!--- modal del carrito -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Tu carrito esta vacio.</p>
+        </div>
+    </div>
+
+    <!----  whatts fixed     ---->
+    <section id='wsp-chat'>
+        <figure>
+            <a class="wsp" href="https://wa.me/+541161031216?text=Hola%20que%20servicios%20brindan%3F">
+                <img class="wst" src="/img/iconos/wsp.png" alt="">
+            </a>
+        </figure>
+    </section>
+
+    <!-- menu buscar  -->
+  <form action="/search" method="GET" id="search-form">
+        <input type="search" name="keywords" placeholder="Buscar..." id="search-box"/>
+        <button style="color: darkcyan; background-color: rgba(47, 79, 79, 0);" for="search-box" class="fas fa-search"></button>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+ 
+
+</section>
+
+<script src="/js/header.js"></script>
+<!-- <script src="/js/carritoModal.js"></script> -->
+

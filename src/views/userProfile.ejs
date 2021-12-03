@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head.ejs') %>
+
+    <body class="user_body" style="display: flex;">
+
+        <div class="container_user">
+
+            <div class="ctn_form">
+                <a href="/" class="close_x1">&times;</a>
+                <h1 class="miPerfil">Hola <%= user.name %></h1>
+
+                <div class="profile_user_img">
+                    <img class="imagenPerfil" src="/img/users_avatars/<%= user.avatar %>">
+                </div>
+
+                <div class="miPerfil">
+                        
+                    <ul class="listaPerfil">
+                        <li>
+                            <div class="userProfileSubtitle"><span class="attrPerfil">Nombre</span></div>
+                            <div class="attrMiPerfil"><%= user.name %></div>
+                        </li>
+                        <li>
+                            <div class="userProfileSubtitle"><span class="attrPerfil">Apellido</span></div> 
+                            <div class="attrMiPerfil"><%= user.last_name %></div> 
+                        </li>
+                        <li>
+                            <div class="userProfileSubtitle"><span class="attrPerfil">Email</span></div> 
+                            <div class="attrMiPerfil"><%= user.email %></div> 
+                        </li>
+                        <li>
+                            <div class="userProfileSubtitle"><span class="attrPerfil"> Teléfono</span></div>  
+                            <div class="attrMiPerfil"><%= user.phone %></div> 
+                        </li>
+                    </ul>
+                </div>
+
+                <% if (locals.errorMsg ) { %>
+                    <small class="text_error">
+                        <%= errorMsg %>
+                    </small>
+                    <% } %>
+                        <div class="editButtonDiv">
+                            <a href="/user/userEdit">
+                                <button class="editarPerfil">
+                                    Editar perfil
+                                </button>
+                            </a>
+                        </div>
+
+
+                        <div class="btn_alHome">
+                            <a href="/">
+                                <button class="buttom_volverHome">Volver</button>
+                            </a>
+                        </div>
+
+
+
+            </div>
+
+
+        </div>
+
+
+        <%- include('partials/wsp.ejs') %>
+    </body>
+    <script src="/js/register"></script>
+    <script src="/js/user.js"></script>
+
+</html>

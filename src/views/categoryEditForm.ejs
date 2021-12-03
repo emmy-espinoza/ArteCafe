@@ -1,0 +1,41 @@
+<%- include('partials/head_admin.ejs')%>
+  <body>
+    <%- include('partials/header_admi.ejs')%>
+    <form class="crearp" id="form" action="/admin/categories/editForm/<%= category.id %>?_method=PUT" method="POST">
+
+      <!-- Campo Nombre -->
+      
+      <div class="form-ad">
+        <label for="inputname" class="form-label">Categoria</label>
+        <input 
+          type="text" 
+          class= "form-ad"
+          id="name" 
+          name="name" 
+          value="<%= locals.old ? old.name : category.name %>" 
+        />
+        <span id="nameErrors" class="text_error">
+          <% if(locals.errors && errors.name) { %>
+            <%= errors.name.msg %>
+          <% } %>
+        </span>
+      </div>
+
+
+      <!-- Errores de formulario -->
+
+      <div class="Producto1">
+        <span id="submitErrors"></span>
+      </div>
+
+      <!-- Boton de "Editar" -->
+
+      <div>
+        <button type="submit" class="btn btn-primary">Editar</button>
+      </div>
+    
+    </form>
+    <%- include('partials/footer.ejs') %>
+    <script src="/js/productEdit.js"></script>
+  </body>
+</html>

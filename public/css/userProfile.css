@@ -1,0 +1,27 @@
+.attrMiPerfil{
+    width: 100%;
+    background: rgba;
+    background: rgba(0,0,0,0);
+    border: 0px;
+    outline: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    font-size: 16px;
+    display: flex;
+    align-items: flex-end;
+}
+.miPerfil{
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    margin-bottom: 14px;
+    color: #7a7a7a;
+}
+
+.attrPerfil{
+    font-size: 19px;
+    color: #7a7a7a;
+    font-family: 'Nunito';
+}
+
+.userProfileSubtitle{
+    margin: 3% 0%;
+}

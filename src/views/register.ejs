@@ -1,0 +1,191 @@
+     <%- include('partials/head.ejs') %>
+     <body class="user_body" style="display: flex;">
+        <div class="container_user">
+            <div class="ctn_form">
+                <a href="/" class="close_x1">&times;</a>
+                <h1 class="title">Registrate</h1>
+
+                <form action="/user/register" method="POST" enctype="multipart/form-data" class="form-ad">
+                    
+                    
+                    
+                    <div class="user_form">
+                        
+                        <!-- Campo Imagen -->
+                        
+                        <div class="imagen-perfil">
+                            <div class="img-prev" id="img-preview"></div>
+                        </div>
+                        <div class="box-form">
+                            <label class="img-perfil" for="imgUser"></label>
+                            <input class="img-input" type="file" name="avatar" id="formFile" value="<%= locals.old && old.file %>"/>
+                        </div>
+                        <div>
+                            <span id="fileErrors" class="text_error">
+                                <% if(locals.errors && errors.file) { %>
+                                    <%= errors.file.msg %>
+                                <% } %>
+                            </span>
+                        </div>
+
+                        <!-- Campo Nombre -->
+
+                        <div class="form_user">
+                            <input 
+                                id="name" 
+                                type="text" 
+                                name="name" 
+                                placeholder="Nombre"
+                                value="<%= locals.old && old.name %>"/>
+                            <span id="nameErrors" class="text_error">
+                                <% if(locals.errors && errors.name) { %>
+                                  <%= errors.name.msg %>
+                                <% } %>
+                            </span>
+                        </div>  
+
+                        <!-- Campo Apellido -->
+
+                        <div class="form_user">
+                            <input 
+                                id="lastname" 
+                                type="text" 
+                                name="last_name" 
+                                placeholder="Apellido"
+                                value="<%= locals.old && old.last_name %>"
+                            />
+                            <span id="lastnameErrors" class="text_error">
+                                <% if(locals.errors && errors.last_name) { %>
+                                  <%= errors.last_name.msg %>
+                                <% } %>
+                            </span>
+                        </div>
+                        
+                        <!-- Campo Telefono -->
+
+                        <div class="form_user">
+                            <input 
+                                type="number" 
+                                id="phone" 
+                                name="phone" 
+                                placeholder="Telefono"
+                                value="<%= locals.old && old.phone %>"
+                            />
+                            <span id="phoneErrors" class="text_error">
+                                <% if(locals.errors && errors.phone) { %>
+                                  <%= errors.phone.msg %>
+                                <% } %>
+                              </span>
+                        </div>
+
+                        <!-- Campo Email -->
+
+                        <div class="form_user">
+                            <input 
+                                id="email" 
+                                type="email" 
+                                name="email" 
+                                placeholder="Tu email"
+                                value="<%= locals.old && old.email %>"
+                            />
+                            <span id="emailErrors" class="text_error">
+                                <% if(locals.errors && errors.email) { %>
+                                    <%= errors.email.msg %>
+                                <% } %>
+                            </span>
+                        </div>
+
+                        <!-- Campo Password -->
+
+                        <div class="form_user">
+                            <input 
+                                id="pass" 
+                                type="password" 
+                                name="pass" 
+                                placeholder="Tu contraseña"
+                                value="<%= locals.old && old.pass %>"
+                            >
+                            <span id="passErrors" class="text_error">
+                                <% if(locals.errors && errors.pass) { %>
+                                  <%= errors.pass.msg %>
+                                <% } %>
+                            </span>
+                        </div>
+
+                        <!-- Campo Password 2 -->
+
+                        <div class="form_user">
+                            <input 
+                                id="pass2" 
+                                type="password" 
+                                name="pass2" 
+                                placeholder="Repetir contraseña"
+                                value="<%= locals.old && old.pass2 %>"
+                            />
+                            <span id="pass2Errors" class="text_error">
+                                <% if(locals.errors && errors.pass2) { %>
+                                  <%= errors.pass2.msg %>
+                                <% } %>
+                            </span>
+                        </div>
+
+                        <!-- Campo Check -->
+
+                        <div class="check">
+                            <input 
+                                id="check" 
+                                type="checkbox" 
+                                name="terms" 
+                                style="margin: 0px 3px;"
+                            />
+                            <label for="check">Acepto terminos y condiciones</label>
+                        </div>
+                        <span class="text_errors" id="termsErrors">
+                            <% if (locals.errorMsg ) { %>
+                                <%= errorMsg %>
+                            <% } %>
+                        </span>
+
+                        <!-- Boton Registrate -->
+                        
+                        <div class="register_buttons_container">
+                            <div class="register_button_div">
+                                <button class="btn_register" type="submit">Registrate</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Campo Errores -->
+                        
+                        <span id="submitErrors" class="text_error">
+                            <% if (locals.errors && errors.submit) { %>
+                                <%= errors.submit.msg %>
+                            <% } %>
+                        </span>
+                        
+                        <!-- Campo "Inicia Sesion" -->
+                        
+                        <span class="text_end">¿Ya sos miembro?
+                            <a href="/user/login">Inicia sesion</a>
+                        </span>
+
+                    </div>
+
+                </form>
+
+            </div> 
+            
+            <div class="ctn_text">
+                <div class="capa"></div>
+                <a href="/" class="close_x">&times;</a>
+                <h1 class="title_bvn">BIENVENID@ </h1>
+                <p class="text_bvn" style="text-align: center;">Regristrate para acceder a nuestras promos.
+                </p>
+            </div>
+
+        </div>
+        <%- include('partials/wsp.ejs') %>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="/js/register.js"></script>
+    </body>
+
+</html>

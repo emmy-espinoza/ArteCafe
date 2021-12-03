@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+footer{
+    width: 100%;
+    padding: 0.111px;
+    background-size: cover;
+    background-color: hsl(120,41.86%,16.86%);
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+}
+ .wave{
+    background-size: contain;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: auto;
+    border:none;
+ }
+
+.container_footer{
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.box_footer{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.box_footer1 .logo img{
+    width: 250px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.box_footer {
+    margin-bottom: 10px;
+    color: #e2dfdf;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.box_footer a{
+    margin-top: 10px;
+    color: #e2dfdf;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.box_footer a:hover{
+    opacity: 0.8;
+}
+
+.box_footer a .fab{
+    font-size: 20px;
+ 
+}
+
+.box_copyright{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+    font-size: 1rem;
+    
+}
+
+.box_copyright p{
+    margin-top: 20px;
+    color: #a19f9f;
+}
+
+.box_copyright hr{
+    border: none;
+    height: 1px;
+    background-color: #d4c8c8;
+}
+
+hr{
+    margin-top:-5px;
+    border: none;
+    padding: 1px;
+    background: linear-gradient(to right, rgb(4, 226, 71),rgb(5, 73, 56));
+}
+
+
+

@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+form .crear{
+	width: 400px;
+	padding:20px;
+	border-radius:30px;
+	margin:auto;
+	background-color: ghostwhite;
+}
+
+.img-container img {
+	max-width: 100px;
+	max-height: 100px;
+	cursor: pointer;
+}

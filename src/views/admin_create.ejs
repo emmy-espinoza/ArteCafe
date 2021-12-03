@@ -1,0 +1,107 @@
+  <%- include('partials/head_admin.ejs')%>
+  <%- include('partials/header_admi.ejs')%>
+  <body>
+    <main class="mainadmin">
+      <div class="crearprod">
+        <form class="crearProducto" id="form" action="/admin/products/create" method="POST" enctype="multipart/form-data">
+          <p class="titleadmin">Crear Producto</p>
+
+          <!-- Campo Nombre -->
+
+          <label for="name">Nombre del producto</label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name"
+          />
+          <span id="nameErrors" class="text_error">
+            <% if(locals.errors && errors.name) { %>
+              <%= errors.name.msg %>
+            <% } %>
+          </span>
+
+          <!-- Campo descripcion -->
+          
+          <label for="description">Descripción</label>
+          <input 
+            type="textarea" 
+            id="description" 
+            name="description"
+            class="textarea_input"
+          />
+          <span id="descriptionErrors" class="text_error">
+            <% if(locals.errors && errors.description) { %>
+              <%= errors.description.msg %>
+            <% } %>
+          </span>
+
+          <!-- Campo Precio -->
+
+          <label for="price">Precio</label>
+          <input 
+            type="number" 
+            id="formPrice" 
+            name="price"
+          />
+          <span id="priceErrors" class="text_error">
+            <% if(locals.errors && errors.price) { %>
+              <%= errors.price.msg %>
+            <% } %>
+          </span>
+
+          <!-- Campo Descuento -->
+
+          <label for="discount">Descuento</label>
+          <input 
+            type="number" 
+            name="discount"
+          />
+
+          <!-- Campo Categorias-->
+          <select class="form-select" id="categorias" name="category">
+            <option selected hidden value="">Categorias</option>
+            <% categories.forEach(category => { %>
+              <option value="<%- category.id%>" <%= locals.old && old.category == category.name ? "selected" : null %>><%- category.name %></option>
+            <% }) %>
+          </select>
+          <span id="categoriasError" class="text_error">
+            <% if(locals.errors && errors.category) { %>
+              <%= errors.category.msg %>
+            <% } %>
+          </span>
+
+          <!-- Campo Imagen Preview-->
+          
+          <div class="box-2 mt-3">
+            <div class="img-container" id="img-preview"></div>
+          </div>
+
+          <!-- Campo Imagen -->
+
+          <div class="unaImagen">
+            <label for="inputimage" class="adminedit">Imagen</label>
+            <input 
+              type="file" 
+              class="form-control" 
+              id="formFile" 
+              name="images" 
+              multiple
+            />
+            <span id="fileErrors"></span>
+          </div>
+
+          <!-- Campo de errores -->
+
+          <span id="submitErrors"></span>
+          <div class="botonCrear">
+            <button type="submit" class="Crear">Crear</button>
+          </div>
+
+        </form>
+      </div> 
+    </main>
+
+    <%- include('partials/footer.ejs') %>
+    <script src='/js/productCreate.js'></script>
+  </body>
+</html>

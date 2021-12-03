@@ -1,0 +1,42 @@
+.icons_bann{
+    background:#eee;
+    display: flex;
+    flex-wrap: wrap;
+    gap:1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    
+   
+}
+
+.icons_bann .icon_bann{
+    background:#fff;
+    border:.1rem solid rgba(0,0,0,.1);
+    padding:1rem;
+    display: flex;
+    align-items: center;
+    flex:1 1 19rem;
+}
+
+.icons_bann .icon_bann img{
+    height:4rem;
+    margin-right: 1rem;
+}
+
+.icons_bann .icon_bann h3{
+    color:#333;
+    padding-bottom: .5rem;
+    font-size: 1.3rem;
+}
+
+.icons_bann .icon_bann span{
+    color:#555;
+    font-size: 1rem;
+}
+
+@media (max-width:500px){
+    .icons_bann{
+        display: flex;
+    }
+}
+

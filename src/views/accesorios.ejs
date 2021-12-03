@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head.ejs')%>
+
+  <body class="productos">
+    <!-- comienza header  --->
+    <%- include('partials/header.ejs') %>
+
+      <h1 class="heading"> Accesorios disponibles </h1>
+      <section class="products" id="products">
+        <%  products.forEach(product=> { %>
+          <div class="box-container">
+            <div class="box">
+              <% if( product.discount > 0 ) { %>
+                <span class="discount">-<%=`${product.discount}` %>%</span>
+              <% } %>
+              <div class="image">
+                <img class="img_pro" style="max-height: 210px;
+                      min-width: 210px;" src="/img/imgProductos/<%= product.images[0].image%>" alt="<%= product.name%>">
+                <div class="icons">
+                  <a href="/products/productsDetail/<%= product.id%>">Ver</a>
+                  <a href="#" class="cart-btn">Agregar</a>
+                  <a href="#" class="fas fa-share"></a>
+                </div>
+              </div>
+              <div class="content">
+                <h3>
+                  <%=product.name%>
+                </h3>
+                <div class="price">
+                  <% if( product.discount > 0 ) { %>
+                    <p class="<%= product.discount > 0 ? 'tachado' : '' %>">
+                      $<%=toThousand(product.price)%>
+                    </p>
+                  <% } %>
+                  <h2>
+                    $<%=toThousand(product.price - product.price * product.discount / 100)%>
+                  </h2>
+                  <% if( product.discount > 0 ) { %>
+                    <span>
+                      <%=product.discount !==0 ? `${product.discount}% OFF` : "" %>
+                    </span>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+      </section>
+
+      <div class="btn_volver" style="text-align: center;">
+        <a href="/" class="btn">Volver</a>
+      </div>
+
+
+
+        <%- include('partials/footer.ejs') %>
+
+    </body>
+    <!-- links JS -->
+
+
+</html>

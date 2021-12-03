@@ -1,0 +1,90 @@
+    <%- include('partials/head.ejs') %>
+    <body class="user_body" style="display: flex;">
+        <div class="container_user">
+            <div class="ctn_form">
+                <a href="/" class="close_x1">&times;</a>
+                <h1 class="title">Iniciar sesión</h1>
+
+                <form id="form" action="/user/login" method="POST" class="form-ad">
+
+                    <div class="user_form">
+                        <input 
+                            id="email" 
+                            type="email" 
+                            name="email" 
+                            placeholder="Ingresá tu email" 
+                            value="<%= locals.old && old.email %>"
+                        />
+                        <% if (locals.errors && errors.email) { %>
+                            <small class="text_error">
+                                <%= errors.email.msg %>
+                            </small>
+                        <% } %>
+                        <span id="emailErrors"></span>
+                    </div>
+
+                    <div class="user_form">
+                        <input 
+                            id="pass" 
+                            type="password" 
+                            name="pass" 
+                            placeholder="Ingresá tu contraseña" 
+                            value="<%= locals.old && old.pass %>"
+                        />
+                        <% if (locals.errors && errors.pass) { %>
+                            <small class="text_error">
+                                <%= errors.pass.msg %>
+                            </small>
+                        <% } %>
+                        <span id="passErrors"></span>
+                    </div>
+
+                    <% if (locals.errorMsg ) { %>
+                        <small class="text_error">
+                            <%= errorMsg %>
+                        </small>
+                    <% } %>
+                    <span id="submitErrors"></span>
+                    
+                    <div class="check">
+                        <input 
+                            type="checkbox" 
+                            name="remember" 
+                            id="check" 
+                            value="<%= locals.old && old.remember %>"
+                            style="margin: 2px;"
+                        />
+                        <label for="check">Mantener sesión abierta</label>
+                    </div>
+
+
+                    <div class="form_submit">
+                        <button class="btn_login" type="submit">Iniciar</button>
+                    </div>
+
+                    <div class="form_register">
+                        <span class="text_end">
+                            ¿Aún no te has regsitrado? 
+                            <a href="/user/register">Registrate</a>
+                        </span>
+                    </div>
+                    
+                </form>
+
+            </div>
+
+            <div class="ctn_text">
+                <div class="capa"></div>
+                <a href="/" class="close_x">&times;</a>
+                <h1 class="title_bvn">BIENVENID@ DE NUEVO</h1>
+                <p class="text_bvn" style="text-align: center;">
+                    Inicia sesión para acceder a nuestras promos.
+                </p>
+            </div>
+
+            <%- include('partials/wsp.ejs') %>
+        </div>
+    </body>
+    
+    <script src="/js/user.js"></script>
+</html>

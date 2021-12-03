@@ -1,0 +1,421 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap");
+
+* {
+  transition: all 0.2s linear;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.envio {
+  color: antiquewhite;
+  background: linear-gradient(
+    to right,
+    rgb(5, 73, 56),
+    rgba(3, 153, 48, 0.671)
+  );
+  height: 1.2rem;
+  align-items: center;
+  display: flex;
+  font-size: 1rem;
+  font-family: "montserrat", sans-serif;
+}
+/*barra gris | social media*/
+
+.social-icons {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: justify;
+  background-color: rgba(123, 133, 131, 0.39);
+  height: 1.5rem;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.social-icons ul li a {
+  border: 0 none;
+  padding: 0px;
+}
+
+.social-icons ul li a i {
+  padding: 11px 15px;
+  transition: all 0.9s ease 0s;
+  -moz-transition: all 0.9s ease 0s;
+  -webkit-transition: all 0.9s ease 0s;
+  -o-transition: all 0.9s ease 0s;
+}
+
+.social-icons a {
+  color: darkslategrey;
+}
+
+.social-icons i:hover {
+  color: white;
+  transition: all 0.9s ease 0s;
+  -moz-transition: all 0.9s ease 0s;
+  -webkit-transition: all 0.9s ease 0s;
+  -o-transition: all 0.9s ease 0s;
+}
+
+.header > section {
+  width: 100%;
+  padding: 0;
+}
+.header_container div .icons {
+  right: 0;
+}
+
+.header_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.header_container > div {
+  width: 96%;
+  display: flex;
+  min-height: 7vw;
+  align-items: center;
+  justify-content: flex-end;
+  right: 1.5rem;
+}
+
+.sub-heading {
+  text-align: center;
+  color: var(--green);
+  font-size: 2rem;
+  padding-top: 1rem;
+}
+
+.heading {
+  text-align: center;
+  color: var(--black);
+  font-size: 3rem;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  font-size: 1rem;
+  color: #fff;
+  background: linear-gradient(90deg, #038166, #22e2a9);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  padding: 0.8rem 3rem;
+}
+
+.btn:hover {
+  background: var(--green);
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+header {
+  background-color: white;
+  width: 100%;
+  /* position: fixed; */
+  z-index: 10;
+}
+.header_container {
+  /*position: fixed;*/
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  z-index: 5;
+  box-shadow: var(--box-shadow);
+  width: 100%;
+}
+
+header .logo {
+  color: var(--black);
+  font-size: 2rem;
+  font-weight: bolder;
+  position: absolute;
+  left: 0;
+  padding: 1.5rem;
+  text-decoration: none;
+}
+
+header .logo i {
+  color: rgb(100, 58, 18);
+}
+header .navbar a {
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.3rem;
+  color: var(--light-color);
+  font-family: "Nunito";
+  text-decoration: none;
+  width: 80%;
+  align-items: center;
+}
+
+.navbar {
+  position: absolute;
+  font-size: 2rem;
+  text-align: center;
+}
+
+header .navbar a.active,
+header .navbar a:hover {
+  color: #fff;
+  background: linear-gradient(90deg, #22e2a9, #038166);
+}
+
+header .icons i,
+header .icons a {
+  cursor: pointer;
+  margin-left: 0.5rem;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  width: 3.5rem;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--black);
+  border-radius: 50%;
+  background: #eee;
+  right: 1rem;
+}
+
+.img-user img {
+  margin-left: 0.4rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 6 px;
+  border-radius: 50%;
+  border: 1px solid var(--color-negro3);
+}
+
+header .icons i:hover,
+header .icons a:hover {
+  color: #fff;
+  background: var(--green);
+  transform: rotate(360deg);
+}
+
+#search-form {
+  position: fixed;
+  top: -110%;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+#search-form.active {
+  top: 0;
+}
+
+#search-form #search-box {
+  width: 50%;
+  border: none;
+  padding: 1rem 0;
+  color: #fff;
+  font-size: 3rem;
+  text-transform: none;
+  background: none;
+}
+
+#search-form #search-box::placeholder {
+  color: #eee;
+  border-bottom: 0.1rem solid var(--letras);
+}
+
+#search-form #search-box::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+#search-form label {
+  color: #fff;
+  cursor: pointer;
+  font-size: 2.5rem;
+  top: 13rem;
+  position: revert;
+}
+
+#search-form label:hover {
+  color: var(--green);
+}
+
+#search-form #close {
+  position: absolute;
+  color: #fff;
+  cursor: pointer;
+  top: 2rem;
+  right: 3rem;
+  font-size: 4rem;
+}
+.session {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #00d900;
+  border-radius: 50px;
+  position: relative;
+  top: -10px;
+  right: 0px;
+}
+.menu-user {
+  display: none;
+  position: absolute;
+  font-size: 1rem;
+  width: 9rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-left: -3rem;
+}
+
+.user:hover .menu-user {
+  display: block;
+
+}
+
+/*********************************************/
+/*********************************************/
+
+/* media queries  */
+
+@media (min-width: 1024px) {
+  header .icons #menu-bars {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-icons {
+    height: 2rem;
+    align-items: center;
+    font-size: 1.4em;
+  }
+  .header_container > div {
+    min-height: 10vw;
+    right: 0;
+    width: 96%;
+  }
+  .heading {
+    font-size: 2rem;
+  }
+  header .logo {
+    padding: 0.7rem;
+  }
+  header .icons i,
+  header .icons a {
+    margin-left: 0.4rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.2rem;
+  }
+  header .navbar {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    background: rgb(17 37 23 / 62%);
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    font-size: 1rem;
+    display: block;
+    z-index: 2;
+  }
+
+  header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  header .navbar a {
+    display: block;
+    padding: 1.3rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    background: #eee;
+  }
+
+  #search-form #search-box {
+    width: 90%;
+    margin: 0 1rem;
+  }
+  #search-form #close {
+    position: absolute;
+    color: #fff;
+    cursor: pointer;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+  }
+  #search-form .fa-search:before {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 450px) {
+    .order form .inputBox .input {
+      width: 100%;
+    }
+    header .icons i,
+    header .icons a {
+      margin-left: 0.4rem;
+      height: 2.5rem;
+      line-height: 2.5rem;
+      width: 2.5rem;
+      font-size: 1rem;
+      right: 1rem;
+    }
+    header .logo {
+      padding: 0.7rem;
+      font-size: 1.5rem;
+    }
+    header .navbar a {
+      display: block;
+      padding: 1.3rem;
+      margin: 1rem;
+      font-size: 1.4rem;
+      background: #eee;
+    }
+    .header_container > div {
+      min-height: 18vw;
+    }
+  }
+  @media (max-width: 320px) {
+    header .logo {
+      padding: 0.3rem;
+      font-size: 1.4rem;
+    }
+    header .icons i,
+    header .icons a {
+      margin-left: 0.4rem;
+      height: 2rem;
+      line-height: 2rem;
+      width: 2rem;
+      font-size: 1rem;
+      right: 1rem;
+    }
+    #search-form #search-box {
+      width: 14rem;
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+.img-user img {
+    margin-left: 0.4rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-top: 6 px;
+    border-radius: 50%;
+    border: 1px solid var(--color-negro3);
+  }
+}

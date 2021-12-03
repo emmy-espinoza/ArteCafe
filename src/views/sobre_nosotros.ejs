@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head.ejs') %>
+
+    <body>
+        <%- include('partials/header.ejs') %>
+
+        <!------------------ animacion y texto---------------------------------->
+            <section class="banner1">
+                <img src="/img/imgVarios/caffe-home1.png" alt="" />
+            </section>
+
+            <section class="about" id="about">
+
+                <h1 class="heading"> Amamos lo que hacemos </h1>
+
+                <div class="row">
+                    <div class="image">
+                        <img src="/img/imgVarios/hombre_moliendoi.jpeg" alt="">
+                    </div>
+
+                    <div class="content">
+                        <h3 class="title">La mejor calidad y cuidados</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse et commodi, ad, doloremque
+                            obcaecati maxime quam minima dolore mollitia saepe quos, debitis incidunt. Itaque
+                            possimus adipisci ipsam harum at autem.
+                        </p>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse et commodi, ad, doloremque
+                            obcaecati maxime quam minima dolore mollitia saepe quos, debitis incidunt. Itaque
+                            possimus adipisci ipsam harum at autem.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="img_nos" >
+
+
+                   <!---banner de iconos-->
+                <section class="icons_bann">
+                    <div class="icon_bann">
+                        <img src="/img/iconos/delivery-truck.png" alt="">
+                        <div class="info">
+                            <h3>Envío a todo el pais</h3>
+                            <span>Bonificado a partir de $3500</span>
+                        </div>
+                    </div>
+
+                    <div class="icon_bann">
+                        <img src="img/iconos/gif.png" alt="">
+                        <div class="info">
+                            <h3>Gift card</h3>
+                            <span>Regala los mejores momentos</span>
+                        </div>
+                    </div>
+
+                    <div class="icon_bann">
+                        <img src="/img/iconos/escudo.png" alt="">
+                        <div class="info">
+                            <h3>Todos los medios de pago</h3>
+                            <span>Tu compra segura</span>
+                        </div>
+                    </div>
+                </section>
+<!----------------- slider ------------------------------------------------------------------->
+                <section class="wrapper" style="margin: .5rem;">
+                    <div class="slider" id="slider">
+                      <ul class="slides">
+                        <li class="slides2" id="slide1">
+                          <a href="#">
+                            <p class="caption">Bienvenid@s</p>
+                            <img src="/img/imgVarios/welcome.jpeg" alt="photo 1">
+                          </a>
+                        </li>
+                        <li class="slides2" id="slide2">
+                          <a href="#">
+                            <p class="caption">Somos Arte café</p>
+                            <img src="/img/img_home/cafe_logo.png" alt="photo 2">
+                          </a>
+                        </li>
+                        <li class="slides2" id="slide3">
+                          <a href="#">
+                            <p class="caption">Los mejores sabores</p>
+                            <img src="/img/imgVarios/camarera2.jpg" alt="photo 3">
+                          </a>
+                        </li>
+                        <li class="slides2" id="slide4">
+                          <a href="#">
+                            <p class="caption">Ambiente agradable</p>
+                            <img src="/img/imgVarios/mesera.jpg" alt="photo 4">
+                          </a>
+                        </li>
+                        <li class="slides2" id="slide5">
+                          <a href="#">
+                             <p class="caption">Sensaciones únicas</p>
+                             <img src="/img/imgVarios/chica_con_cafe.jpeg" alt="photo 5">
+                          </a>
+                        </li>
+                        <li class="slides2">
+                          <a href="#">
+                            <p class="caption">Sabores únicos</p>
+                            <img src="/img/imgVarios/cafe_mesa_flores.jpeg" alt="photo 1">
+                          </a>
+                        </li>
+                      </ul>
+                      <ul class="slider-controler">
+                        <li><a href="#slide1">&bullet;</a></li>
+                        <li><a href="#slide2">&bullet;</a></li>
+                        <li><a href="#slide3">&bullet;</a></li>
+                        <li><a href="#slide4">&bullet;</a></li>
+                        <li><a href="#slide5">&bullet;</a></li>
+                      </ul>
+                    </div>
+                </section>
+
+<section id="imgNos">
+    <div class="fila">
+        <div class="columna">
+            <img src="/img/imgVarios/welcome.jpeg">
+        </div>
+        <div class="columna">
+            <img src="/img/imgVarios/chica_con_cafe.jpeg">
+        </div>
+        <div class="columna">
+            <img src="/img/imgVarios/mesera.jpg">
+        </div>
+    </div>
+    <div class="fila">
+        <div class="columna">
+            <img src="/img/imgVarios/logo_black2.jpg">
+        </div>
+        <div class="columna">
+            <img src="/img/imgVarios/cafe_mesa_flores.jpeg">
+        </div>
+        <div class="columna">
+            <img src="/img/imgVarios/camarera2.jpg">
+        </div>
+        
+    </div>
+</section>
+
+
+                
+            </section>
+            <%- include('partials/footer.ejs') %>
+    </body>
+
+</html>

@@ -1,0 +1,88 @@
+
+.part-1 .imagen img{
+    width: 30%;
+    padding-top: 150px;
+}
+
+.part-1 {
+    text-align: center;
+}
+
+.form-pagar{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    color: rgb(109, 106, 106);
+   
+    }
+
+.form-pagar label {
+    padding: 10px;
+    color: gray;
+}
+
+.form-pagar input{
+    width: 200px; 
+    border-radius: 50px;
+    padding: 7px;
+}
+
+
+.part-2 .img1 img, .part-2 .img2 img{
+    width: 30px;
+}
+
+.part-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.realizado a{
+    text-decoration: none;
+   
+}
+
+.volver a{
+    text-decoration: none;
+
+}
+
+.listo {
+
+border-radius: 30px;
+width: 139px;
+text-align: center;
+margin-top: 293px;
+position: relative;
+top: 59px;
+right: 160px;
+}
+
+.regreso{
+    margin-top: 70px;
+}
+
+
+
+@media(min-width:768px){
+
+.part-1 .imagen img{
+        width: 70%;
+        width: 200px;
+        padding: 30px;
+}
+
+.form-2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16%;
+}}
+
+@media(min-width:1024px){
+
+    .part-1 .imagen img{
+        width: 259px;
+      
+}}
